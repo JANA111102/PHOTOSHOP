@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LensArt Studio — Photography</title>
+  <link rel="stylesheet" href="App.Css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="logo">Lens<span>Art</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Professional Photography Studio</p>
+      <h1>We Capture <span>Moments</span><br>That Last Forever</h1>
+      <p class="hero-sub">Portraits · Weddings · Commercial · Events</p>
+      <div class="hero-btns">
+        <a href="#gallery" class="btn btn-primary">View Our Work</a>
+        <a href="#contact" class="btn btn-outline">Book a Session</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">What We Offer</p>
+        <h2>Our Services</h2>
+        <p class="section-sub">From intimate portraits to large-scale commercial shoots, we deliver stunning imagery tailored to your vision.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+          <h3>Wedding Photography</h3>
+          <p>Timeless storytelling of your most cherished day. We blend documentary and fine-art styles for authentic emotion.</p>
+          <span class="service-price">From $1,200</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-user"></i></div>
+          <h3>Portrait Sessions</h3>
+          <p>Individual, family, or professional headshots. Relaxed sessions designed to bring out your true personality.</p>
+          <span class="service-price">From $250</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h3>Commercial Photography</h3>
+          <p>Product, brand, and editorial imagery that elevates your business and stops the scroll.</p>
+          <span class="service-price">From $800</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-camera"></i></div>
+          <h3>Event Coverage</h3>
+          <p>Corporate events, galas, concerts, and private parties captured with precision and creativity.</p>
+          <span class="service-price">From $500</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+          <h3>Real Estate</h3>
+          <p>Interior and exterior photography that makes every property shine and sell faster.</p>
+          <span class="service-price">From $300</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3>Photo Editing</h3>
+          <p>Professional retouching, color grading, and composite work to perfect your existing images.</p>
+          <span class="service-price">From $50</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALLERY ── -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Our Portfolio</p>
+        <h2>Recent Work</h2>
+        <p class="section-sub">A glimpse into the stories we've told through our lens.</p>
+      </div>
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="wedding">Wedding</button>
+        <button class="filter-btn" data-filter="portrait">Portrait</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="event">Event</button>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item" data-category="wedding">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding photography" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" data-category="portrait">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" alt="Portrait photography" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" data-category="commercial">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Commercial photography" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" data-category="wedding">
+          <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=80" alt="Wedding photography" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" data-category="portrait">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Portrait photography" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" data-category="event">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80" alt="Event photography" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" data-category="commercial">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="Commercial photography" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" data-category="portrait">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80" alt="Portrait photography" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item" data-category="event">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80" alt="Event photography" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIGHTBOX ── -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="Full size image" />
+    </div>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1552168324-d612d77725e3?w=700&q=80" alt="Photographer at work" />
+        <div class="about-badge">
+          <span class="badge-number">12+</span>
+          <span class="badge-text">Years of Experience</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-tag">Our Story</p>
+        <h2>Passion Behind the Lens</h2>
+        <p>LensArt Studio was founded in 2012 with a single belief: every moment deserves to be preserved with intention and artistry. Based in New York, our team of dedicated photographers brings a unique perspective to every shoot.</p>
+        <p>We combine technical mastery with an eye for storytelling, ensuring each image not only looks stunning but also feels true to the moment it captures.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">850+</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">3,200+</span>
+            <span class="stat-label">Projects Done</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">18</span>
+            <span class="stat-label">Awards Won</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Work With Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">Kind Words</p>
+        <h2>Client Reviews</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"LensArt captured our wedding perfectly. Every single photo tells a story — we cry happy tears every time we look at them."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Sarah M." />
+            <div><strong>Sarah M.</strong><span>Wedding Client</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"The commercial shoot for our product launch was beyond expectations. The images drove a 40% increase in engagement online."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80" alt="James R." />
+            <div><strong>James R.</strong><span>Brand Director</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>"My family portraits came out absolutely gorgeous. The team made us feel so relaxed and natural — it really shows in the photos."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&q=80" alt="Priya K." />
+            <div><strong>Priya K.</strong><span>Portrait Client</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p class="section-tag">Get In Touch</p>
+        <h2>Let's Create Something Beautiful</h2>
+        <p>Ready to book a session or have a question? Reach out and we'll get back to you within 24 hours.</p>
+        <ul class="contact-details">
+          <li><i class="fa-solid fa-location-dot"></i> 142 West 36th Street, New York, NY 10018</li>
+          <li><i class="fa-solid fa-phone"></i> +1 (212) 555-0192</li>
+          <li><i class="fa-solid fa-envelope"></i> hello@lensartstudio.com</li>
+          <li><i class="fa-regular fa-clock"></i> Mon – Sat: 9am – 7pm</li>
+        </ul>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="service">Service Interested In</label>
+          <select id="service" name="service">
+            <option value="">Select a service…</option>
+            <option value="wedding">Wedding Photography</option>
+            <option value="portrait">Portrait Session</option>
+            <option value="commercial">Commercial Photography</option>
+            <option value="event">Event Coverage</option>
+            <option value="realestate">Real Estate</option>
+            <option value="editing">Photo Editing</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your project or any questions you have…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+        <p class="form-success" id="formSuccess">Thanks! We'll be in touch soon.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container footer-inner">
+      <a href="#hero" class="logo">Lens<span>Art</span></a>
+      <p>© 2026 LensArt Studio. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="App.js"></script>
+</body>
+</html>
