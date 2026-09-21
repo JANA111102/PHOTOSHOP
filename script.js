@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ───────────────────────────────────────── */
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
-  const FORMSPREE_URL = 'https://formspree.io/f/mzezevdp';
+  const FORMSPREE_URL = 'https://formspree.io/f/mgavazke';
 
   contactForm.addEventListener('submit', async e => {
     e.preventDefault();
