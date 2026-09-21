@@ -147,39 +147,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ─────────────────────────────────────────
-     5. CONTACT FORM
+     5. CONTACT FORM — Formspree
   ───────────────────────────────────────── */
-  const contactForm   = document.getElementById('contactForm');
-  const formSuccess   = document.getElementById('formSuccess');
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+  const FORMSPREE_URL = 'https://formspree.io/f/mzezevdp';
 
-  contactForm.addEventListener('submit', e => {
+  contactForm.addEventListener('submit', async e => {
     e.preventDefault();
 
     const name    = contactForm.querySelector('#name').value.trim();
     const email   = contactForm.querySelector('#email').value.trim();
     const message = contactForm.querySelector('#message').value.trim();
 
-    if (!name || !email || !message) {
-      // Simple inline validation
-      [contactForm.querySelector('#name'), contactForm.querySelector('#email'), contactForm.querySelector('#message')]
-        .forEach(field => {
-          field.style.borderColor = !field.value.trim() ? '#eb5757' : '';
-        });
-      return;
-    }
+    // Validation
+    let valid = true;
+    [contactForm.querySelector('#name'), contactForm.querySelector('#email'), contactForm.querySelector('#message')]
+      .forEach(field => {
+        if (!field.value.trim()) {
+          field.style.borderColor = '#eb5757';
+          valid = false;
+        }
+      });
+    if (!valid) return;
 
-    // Simulate form submission
     const submitBtn = contactForm.querySelector('button[type="submit"]');
-    submitBtn.textContent = 'Sending…';
+    submitBtn.innerHTML = 'Sending… <i class="fa-solid fa-spinner fa-spin"></i>';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-      contactForm.reset();
-      submitBtn.textContent = 'Send Message ✉';
+    try {
+      const response = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          service: contactForm.querySelector('#service').value,
+          message,
+        }),
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        formSuccess.style.display = 'block';
+        setTimeout(() => { formSuccess.style.display = 'none'; }, 6000);
+      } else {
+        const data = await response.json();
+        alert(data?.errors?.map(err => err.message).join(', ') || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      alert('Network error. Please check your connection and try again.');
+    } finally {
+      submitBtn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane"></i>';
       submitBtn.disabled = false;
-      formSuccess.style.display = 'block';
-      setTimeout(() => { formSuccess.style.display = 'none'; }, 5000);
-    }, 1200);
+    }
   });
 
   // Clear red border on input
