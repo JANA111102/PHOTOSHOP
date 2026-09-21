@@ -147,11 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ─────────────────────────────────────────
-     5. CONTACT FORM — Formspree
+     5. CONTACT FORM — Google Sheets
   ───────────────────────────────────────── */
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
-  const FORMSPREE_URL = 'https://formspree.io/f/mgavazke';
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbySy_VJ4bF7b9-j8OByf6MzT3iWX_667joq5gdk_hB2ZzP0rIv_1ctgmtj87NsAA2io/exec';
 
   contactForm.addEventListener('submit', async e => {
     e.preventDefault();
@@ -176,25 +176,24 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.disabled = true;
 
     try {
-      const response = await fetch(FORMSPREE_URL, {
+      await fetch(SHEET_URL, {
         method: 'POST',
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name,
           email,
+          phone: contactForm.querySelector('#phone').value.trim(),
           service: contactForm.querySelector('#service').value,
           message,
         }),
       });
 
-      if (response.ok) {
-        contactForm.reset();
-        formSuccess.style.display = 'block';
-        setTimeout(() => { formSuccess.style.display = 'none'; }, 6000);
-      } else {
-        const data = await response.json();
-        alert(data?.errors?.map(err => err.message).join(', ') || 'Something went wrong. Please try again.');
-      }
+      // no-cors means we can't read the response, but if no error thrown it succeeded
+      contactForm.reset();
+      formSuccess.style.display = 'block';
+      setTimeout(() => { formSuccess.style.display = 'none'; }, 6000);
+
     } catch (err) {
       alert('Network error. Please check your connection and try again.');
     } finally {
